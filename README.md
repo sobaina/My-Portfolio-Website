@@ -1,5 +1,7 @@
 # My-Portfolio-Website
-This is my personal portfolio website built with HTML, CSS, and JavaScript. It showcases my background, skills, and projects as a CS undergraduate.
+This is my first portfolio website built with HTML, CSS, and JavaScript. It showcases my background, skills, and projects as a CS undergraduate.
+
+
 📌 Features
 🎥 Full-screen video background intro
 
