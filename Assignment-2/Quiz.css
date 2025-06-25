@@ -1,0 +1,93 @@
+#image {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    color: black;
+}
+
+#block
+{
+    position: absolute;
+    width: fit-content;
+    color: solid black;
+}
+
+#text {
+    font-family: 'Rajdhani', sans-serif;
+    color: #F2F2F2;
+    position: absolute;
+    left: 230px;
+    width: 284px;
+    top: 70px;
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    height: 92px;
+
+}
+
+.flex-box {
+    display: flex;
+    color: black;
+}
+
+#text-input {
+    position: absolute;
+    height: 50px;
+    top: 200px;
+    left: 17%;
+    width: 920px;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #232226;
+
+}
+
+button:hover {
+    color: darkblue;
+}
+
+#my-button {
+    position: absolute;
+    width: 64px;
+    height: 56px;
+    top: 200px;
+    left: 90%;
+    background-color: #C2D91A;
+    font-size: 30px;
+    border-radius: 0%;
+    border-color: #232226;
+
+}
+
+#listofoptions
+{
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    height: 50px;
+    top: 300px;
+    left: 17%;
+    width: 920px;
+}
+
+li.task-item 
+{
+    color: #232226;
+    font-size: larger;
+   text-decoration-color: black;
+    position: absolute;
+    width: 906;
+    height: 70;
+    left: 267px;
+    margin-bottom: 10px;
+    
+}
