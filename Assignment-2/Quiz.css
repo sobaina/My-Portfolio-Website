@@ -6,8 +6,7 @@
     color: black;
 }
 
-#block
-{
+#block {
     position: absolute;
     width: fit-content;
     color: solid black;
@@ -49,6 +48,21 @@
 
 }
 
+
+#delete-button
+ {
+ position: absolute;
+    width: 64px;
+    height: 56px;
+    top: 300px;
+    left: 90%;
+    background-color: #C2D91A;
+    font-size: 30px;
+    border-radius: 0%;
+    border-color: #232226;
+}
+
+
 button:hover {
     color: darkblue;
 }
@@ -66,28 +80,26 @@ button:hover {
 
 }
 
-#listofoptions
-{
+#listofoptions {
     z-index: 1;
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap: 1rem;
     height: 50px;
     top: 300px;
     left: 17%;
     width: 920px;
 }
 
-li.task-item 
-{
+li.task-item {
     color: #232226;
     font-size: larger;
-   text-decoration-color: black;
+    text-decoration-color: black;
     position: absolute;
     width: 906;
     height: 70;
     left: 267px;
     margin-bottom: 10px;
-    
+
 }
