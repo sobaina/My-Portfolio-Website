@@ -1,0 +1,33 @@
+#Headings {
+    font-size: large;
+    color: rgb(241, 6, 92);
+    position: absolute;
+    left: 200px;
+}
+
+#Form-section {
+    position: absolute;
+    align-items: center;
+    left: 200px;
+    top: 250px;
+}
+
+#bookList {
+    position: absolute;
+    top: 500px;
+    align-items: center;
+    left: 200px;
+}
+
+#Search-of-books {
+    position: absolute;
+    top: 400px;
+    align-items: center;
+    left: 200px;
+}
+
+html {
+
+    background-color: bisque;
+
+}
