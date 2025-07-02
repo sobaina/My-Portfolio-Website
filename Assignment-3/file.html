@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Registration</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Book Registration System</h1>
+
+  <!-- Book registration form -->
+  <form id="bookForm">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required /><br /><br />
+
+    <label for="author">Author:</label>
+    <input type="text" id="author" name="author" required /><br /><br />
+
+    <label for="cover">Cover Image URL:</label>
+    <input type="url" id="cover" name="cover" required /><br /><br />
+
+    <label for="price">Price (PKR):</label>
+    <input type="number" id="price" name="price" min="0" required /><br /><br />
+
+    <button type="submit">Add Book</button>
+  </form>
+
+  <hr />
+
+  <!-- Search section -->
+  <h2>Search Books</h2>
+  <input type="text" id="searchInput" placeholder="Search by title" />
+  <button id="searchBtn">Search</button>
+
+  <hr />
+
+  <!-- Book list display -->
+  <h2>Book Catalog</h2>
+  <div id="bookList"></div>
+
+  <script src="jav.js"></script>
+</body>
+</html>
