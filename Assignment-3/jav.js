@@ -1,4 +1,4 @@
-const ROLL_NUMBER = "874293";  // Replace with your own 6-digit roll number
+const ROLL_NUMBER = "27100398";  //6-digit roll number
 
 const new_entry = document.querySelector("#bookForm");
 
@@ -17,23 +17,25 @@ new_entry.addEventListener("submit", (event) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bookData)
     })
-    .then(response =>
-        response.json().then(data => {
-            if (!response.ok) {
-                throw new Error(data.message || "Failed to add book.");
-            }
-            return data;
+        .then(response =>
+            response.json().then(data => {
+                if (!response.ok) {
+                    throw new Error(data.message || "Failed to add book.");
+                }
+                return data;
+            })
+        )
+        .then(data => {
+            alert("Book added!");
+            console.log(bookData)
+            window.location.reload();  // Reload to show updated catalog
         })
-    )
-    .then(data => {
-        alert("Book added!");
-        window.location.reload();  // Reload to show updated catalog
-    })
-    .catch(error => {
-        console.error("Error adding book:", error.message);
-        alert("Error: " + error.message);
-    });
-});
+        .then(data => {
+            console.log("API data:", data);
+        });
+
+})
+   
 
 const List_of_books = document.querySelector("#bookList");
 
@@ -47,27 +49,32 @@ fetch(`https://assignment3.rohanhussain.com/api/books/${ROLL_NUMBER}`)
         })
     )
     .then(data => {
-        if (!Array.isArray(data.books) || data.books.length === 0) {
+
+        const books = data.result?.books || [];
+
+        if (!Array.isArray(books) || books.length === 0) {
             List_of_books.innerHTML = "<p>No books in catalog yet.</p>";
             return;
         }
 
-        data.books.forEach(book => {
+        books.forEach(book => {
             const card = document.createElement("div");
             card.innerHTML = `
-                <img src="${book.coverImageUrl}" alt="${book.title}" width="100">
-                <h3>${book.title}</h3>
-                <p>by ${book.author}</p>
-                <p>PKR ${book.price}</p>
-                <hr>
-            `;
+        <img src="${book.coverImageUrl}" alt="${book.title}" width="100">
+        <h3>${book.title}</h3>
+        <p>by ${book.author}</p>
+        <p>PKR ${book.price}</p>
+        <hr>
+    `;
             List_of_books.appendChild(card);
         });
+
     })
     .catch(error => {
         console.error("Fetch error:", error.message);
         List_of_books.innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
     });
+
 const searchBtn = document.getElementById("searchBtn");
 
 searchBtn.addEventListener("click", () => {
@@ -85,20 +92,22 @@ searchBtn.addEventListener("click", () => {
         .then(data => {
             List_of_books.innerHTML = "";
 
-            if (!Array.isArray(data.books) || data.books.length === 0) {
+            const books = data.result?.books || [];
+
+            if (!Array.isArray(books) || books.length === 0) {
                 List_of_books.innerHTML = "<p>No matching books found.</p>";
                 return;
             }
 
-            data.books.forEach(book => {
+            books.forEach(book => {
                 const card = document.createElement("div");
                 card.innerHTML = `
-                    <img src="${book.coverImageUrl}" alt="${book.title}" width="100">
-                    <h3>${book.title}</h3>
-                    <p>by ${book.author}</p>
-                    <p>PKR ${book.price}</p>
-                    <hr>
-                `;
+            <img src="${book.coverImageUrl}" alt="${book.title}" width="100">
+            <h3>${book.title}</h3>
+            <p>by ${book.author}</p>
+            <p>PKR ${book.price}</p>
+            <hr>
+        `;
                 List_of_books.appendChild(card);
             });
         })
